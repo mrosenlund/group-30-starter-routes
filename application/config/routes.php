@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['sleep'] = 'first/zzz';
 $route['show/(:num)'] = 'first/gimme/$1';
+$route['([a-zA-Z]{4})/bingo'] = 'bingo';
