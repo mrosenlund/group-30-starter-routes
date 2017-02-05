@@ -29,5 +29,34 @@ class Hogwarts extends Application
 
 		$this->render();
 	}
+    /**
+     * Show the top middle author quote
+     */
+    public function shucks()
+    {
+        // this is the view we want shown
+        $this->data['pagebody'] = 'justone';
+
+        // build the middle top authors, to pass on to our view
+        $record = $this->quotes->topMiddle();
+        $this->data = array_merge($this->data, $record);
+        $this->render();
+    }
+    /**
+     * Show random quote if URL is invalid
+     */
+    public function randomize()
+    {
+        $this->data['pagebody'] = 'justone';
+        $source = $this->quotes->all();
+
+        //$authors = array();
+
+        $count = count($source);
+        $index = rand(0, $count-1);
+        $record = $source[$index];
+        $this->data = array_merge($this->data, $record);
+        $this->render();
+    }
 
 }
