@@ -27,4 +27,35 @@ class First extends Application
 		$this->render();
 	}
 
+	/**
+	 *	Shows the quote by the top left author image (Bob Monkhouse)
+	 */
+	public function zzz()
+	{
+		//view to be shown
+		$this->data['pagebody'] = 'justone';
+
+		//quote
+		$record = $this->quotes->first();
+
+		//merge
+		$this->data = array_merge($this->data, $record);
+
+		$this->render();
+	}
+
+	public function gimme($id)
+	{
+		//view to be shown
+		$this->data['pagebody'] = 'justone';
+
+		//Get the quote from the param
+		$record = $this->quotes->get($id);
+
+		//merge
+		$this->data = array_merge($this->data, $record);
+
+		$this->render();
+	}
+
 }
