@@ -52,4 +52,17 @@ class Quotes extends CI_Model {
 		return $this->data[0];
 	}
 
+    public function second()
+    {
+        return $this->data[1];
+    }
+
+    public function last()
+    {
+        end($this->data);
+        $last_ = key($this->data);
+
+        return $this->data[$last_];
+    }
+
 }
