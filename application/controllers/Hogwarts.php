@@ -38,7 +38,7 @@ class Hogwarts extends Application
         $this->data['pagebody'] = 'justone';
 
         // build the middle top authors, to pass on to our view
-        $record = $this->quotes->topMiddle();
+        $record = $this->quotes->second();
         $this->data = array_merge($this->data, $record);
         $this->render();
     }
@@ -49,8 +49,6 @@ class Hogwarts extends Application
     {
         $this->data['pagebody'] = 'justone';
         $source = $this->quotes->all();
-
-        //$authors = array();
 
         $count = count($source);
         $index = rand(0, $count-1);
